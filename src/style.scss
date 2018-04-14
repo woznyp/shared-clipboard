@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin-ext');
+
+* {
+  font-family: 'Open Sans';
+}
+
+body {
+  background: lightgray;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#main {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 80vw;
+  @media screen and (max-width:768px) {
+    width: 90vw;
+  }
+  #form__container {
+    width: 100%;
+    form {
+      fieldset {
+        div {
+          box-shadow: gray 2px 2px 4px;
+          transition: box-shadow 0.2s linear;
+          display: flex;
+          max-height: 50px;
+          width: 100%;
+          &.inactive {
+            input,
+            button {
+              color: gray;
+            }
+          }
+          &:not(.inactive) {
+            button {
+              &:hover {
+                box-shadow: gray 4px 4px 4px;
+                transition: box-shadow 0.2s linear;
+              }
+              cursor: pointer;
+            }
+          }
+          input,
+          button {
+            font-size: 35px;
+            @media screen and (max-width:768px) {
+              font-size: 15px;
+            }
+            height: 50px;
+            margin: 0;
+            border: 0;
+            padding: 0;
+            outline: none;
+          }
+          input {
+            box-sizing: border-box;
+            padding: 0 10px;
+            width: 75%;
+          }
+          button {
+            width: 25%;
+          }
+        }
+        margin: 0;
+        border: 0;
+        padding: 0;
+      }
+    }
+  }
+  #cards {
+    margin: 25px 0 0 0;
+    width: 100%;
+    .card {
+      background: white;
+      display: flex;
+      flex-direction: row;
+      padding: 10px;
+      margin: 0 0 4px 0;
+      box-shadow: gray 2px 2px 4px;
+      transition: box-shadow 0.2s linear;
+      &:hover{
+        box-shadow: gray 4px 4px 4px;
+      }
+      &__text,
+      &__date {
+        display: block;
+      }
+      &__text {
+        width: 60%;
+      }
+      &__date {
+        padding: 0 10px 0 0;
+        width: 35%;
+        text-align: right;
+      }
+      button{
+          background: white;
+          border: none;
+          outline: none;
+          width: 5%;
+          text-align: center;
+          box-shadow:gray 2px 2px 4px;
+          transition: box-shadow 0.2s linear;
+          &:hover{
+              box-shadow: gray 4px 4px 4px;
+              cursor: pointer;
+          }
+      }
+    }
+  }
+}
